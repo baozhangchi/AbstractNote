@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractNote", "AbstractNote\AbstractNote\AbstractNote.csproj", "{EA866AD6-562F-41FF-9EF9-6551165D38BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractNote.Client", "AbstractNote\AbstractNote.Client\AbstractNote.Client.csproj", "{3AA18351-2D10-42B8-961D-4DFB91CA38B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA866AD6-562F-41FF-9EF9-6551165D38BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA866AD6-562F-41FF-9EF9-6551165D38BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA866AD6-562F-41FF-9EF9-6551165D38BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA866AD6-562F-41FF-9EF9-6551165D38BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AA18351-2D10-42B8-961D-4DFB91CA38B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AA18351-2D10-42B8-961D-4DFB91CA38B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AA18351-2D10-42B8-961D-4DFB91CA38B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AA18351-2D10-42B8-961D-4DFB91CA38B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1A20672-3276-4FAE-B16A-603972336397}
+	EndGlobalSection
+EndGlobal

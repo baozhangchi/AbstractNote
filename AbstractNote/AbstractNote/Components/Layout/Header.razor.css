@@ -1,0 +1,12 @@
+﻿.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.active {
+    color: red;
+}
+
+.space {
+    flex: 1
+}
