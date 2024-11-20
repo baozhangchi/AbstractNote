@@ -1,0 +1,48 @@
+@typeparam TEntity
+<div style="padding-left: @(TreeItemLevel * 20)px">
+    <div @onclick="Toggle" style="display:flex;">
+        @{
+            var children = ChildrenSelector?.Invoke(Item);
+            if (children != null && children.Any())
+            {
+                <span>@(isExpanded ? "-" : "+")</span>
+            }
+        }
+        @if (ItemTemplate != null)
+        {
+            @ItemTemplate.Invoke(Item)
+        }
+        else
+        {
+            @Item
+        }
+    </div>
+
+    @if (isExpanded && children != null && children.Any())
+    {
+        <div>
+            @foreach (var child in children)
+            {
+                <TreeItemView Item="@child" TreeItemLevel="@(TreeItemLevel+1)" ItemTemplate="@ItemTemplate" ChildrenSelector="@ChildrenSelector" />
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public TEntity Item { get; set; } = default(TEntity)!;
+
+    [Parameter] public RenderFragment<TEntity>? ItemTemplate { get; set; }
+
+    [Parameter] public int TreeItemLevel { get; set; }
+
+    [Parameter] public Func<TEntity, List<TEntity>>? ChildrenSelector { get; set; }
+
+    private bool isExpanded;
+
+    private void Toggle()
+    {
+        isExpanded = !isExpanded;
+    }
+
+}

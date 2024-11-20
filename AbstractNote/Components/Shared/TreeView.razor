@@ -1,0 +1,20 @@
+@typeparam TEntity
+@if (ItemsSource != null)
+{
+    <div>
+        @foreach (var item in ItemsSource)
+        {
+            <TreeItemView Item="@item" ItemTemplate="@ItemTemplate" ChildrenSelector="@ChildrenSelector"></TreeItemView>
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public IEnumerable<TEntity>? ItemsSource { get; set; }
+
+    [Parameter]
+    public RenderFragment<TEntity>? ItemTemplate { get; set; }
+
+    [Parameter] public Func<TEntity, List<TEntity>>? ChildrenSelector { get; set; }
+}

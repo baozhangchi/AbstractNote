@@ -1,0 +1,53 @@
+<div class="root">
+    @if (Header != null)
+    {
+        <div class="header" style="height: @(HeaderHeight.HasValue ? $"{HeaderHeight}px" : "unset")">
+            @Header
+        </div>
+    }
+    <div class="main">
+        @if (LeftSide != null)
+        {
+        <div class="left-side">
+            @LeftSide
+        </div>
+        }
+        @if (Body != null)
+        {
+        <div class="body">
+            @Body
+        </div>
+        }
+        @if (RightSide != null)
+        {
+        <div class="right-side">
+            @RightSide
+        </div>
+        }
+    </div>
+    @if (Footer != null)
+    {
+    <div class="footer">
+        @Footer
+    </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment? Body { get; set; }
+    
+    [Parameter]
+    public RenderFragment? Header { get; set; }
+
+    [Parameter] public int? HeaderHeight { get; set; } = 50;
+    
+    [Parameter]
+    public RenderFragment? LeftSide { get; set; }
+    
+    [Parameter]
+    public RenderFragment? RightSide { get; set; }
+    
+    [Parameter]
+    public RenderFragment? Footer { get; set; }
+}

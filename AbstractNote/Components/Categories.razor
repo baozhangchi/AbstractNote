@@ -1,0 +1,42 @@
+<TreeView ItemsSource="@_categories" ChildrenSelector="@(x=>x.Items??new List<Category>())">
+    <ItemTemplate>
+        <div>
+            @context.Name
+        </div>
+    </ItemTemplate>
+</TreeView>
+
+@code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _categories = GenerateCategories(3);
+    }
+
+    private List<Category> GenerateCategories(int count, string? parentName = null)
+    {
+        var items = new List<Category>();
+        for (var i = 1; i <= count; i++)
+        {
+            var item = new Category();
+            item.Name = string.IsNullOrWhiteSpace(parentName) ? $"Category_{i}" : $"{parentName}_{i}";
+            if (i > 1)
+            {
+                item.Items = GenerateCategories(i - 1, item.Name);
+            }
+
+            items.Add(item);
+        }
+
+        return items;
+    }
+
+    private List<Category>? _categories;
+
+    public class Category
+    {
+        public string? Name { get; set; }
+
+        public List<Category>? Items { get; set; }
+    }
+}
